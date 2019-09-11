@@ -11,7 +11,8 @@ def index():
 @app.route("/charge",methods=["POST"])
 def create_charge():
     post_data = request.get_json()
-    stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
+    # stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
+    stripe.api_key = "sk_test_y4loVOUbPheQAaV3NUC0hs2k"
     try:
         charge = stripe.Charge.create(
             amount=post_data.get('amount'),
